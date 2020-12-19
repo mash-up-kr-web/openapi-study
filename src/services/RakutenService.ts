@@ -5,14 +5,7 @@ class RakutenService {
   async getWeather(latitude: string, longitude: string) {
     try {
       const result = await axios.get(
-        `https://weatherbit-v1-mashape.p.rapidapi.com/current?lang=en&lon=${longitude}&lat=${latitude}`,
-        {
-          headers: {
-            'x-rapidapi-host': 'weatherbit-v1-mashape.p.rapidapi.com',
-            'x-rapidapi-key': process.env.REACT_APP_RAKUTEN_KEY,
-            useQueryString: true,
-          },
-        },
+        `http://api.weatherbit.io/v2.0/current?lang=en&lon=${longitude}&lat=${latitude}&key=f48d8e3740554aa28c01c9453a90e2d6`,
       );
 
       return result.data.data[0];
