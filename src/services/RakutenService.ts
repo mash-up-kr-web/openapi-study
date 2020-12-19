@@ -2,7 +2,6 @@
 import axios from 'axios';
 
 class RakutenService {
-
   async getWeather(latitude: string, longitude: string) {
     try {
       const result = await axios.get(
@@ -15,7 +14,6 @@ class RakutenService {
     }
   }
 
-
   async get16Weather() {
     try {
       const result = await axios.get(
@@ -23,7 +21,8 @@ class RakutenService {
         {
           headers: {
             'x-rapidapi-host': 'weatherbit-v1-mashape.p.rapidapi.com',
-            'x-rapidapi-key': '30a3f2f5edmsh2bfe33c69b69314p110d63jsn667723c0e195',
+            'x-rapidapi-key':
+              '30a3f2f5edmsh2bfe33c69b69314p110d63jsn667723c0e195',
             useQueryString: true,
           },
         },

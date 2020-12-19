@@ -1,0 +1,13 @@
+.snowing {
+  background-image: url(https://t1.daumcdn.net/cfile/tistory/16333B4F4E970F1325);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-origin: padding-box;
+  background-clip: border-box;
+}
+
+.default {
+  background-color: #000;
+}
