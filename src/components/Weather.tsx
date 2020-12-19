@@ -31,7 +31,6 @@ const Card = styled.div<{ darkmode: boolean }>`
     css`
       background-color: white;
     `}
-  margin-top: 50px;
   border-radius: 10px;
 `;
 

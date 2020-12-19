@@ -18,8 +18,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   #root {
-    display: flex;
-    justify-contents: 
     margin: 0 auto;
     text-align: center;
     height: 100%;
