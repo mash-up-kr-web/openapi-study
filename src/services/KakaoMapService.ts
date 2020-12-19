@@ -19,7 +19,7 @@ class KakaoMapService {
   private loadScript() {
     const script = document.createElement('script');
     script.async = true;
-    script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.REACT_APP_KAKAO_KEY}&libraries=services&autoload=false`;
+    script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${'7a8b1fae0d163baabaf79a15fff12752'}&libraries=services&autoload=false`;
     document.head.appendChild(script);
 
     script.onload = () => {
