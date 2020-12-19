@@ -13,28 +13,28 @@ function App() {
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState<Record<string, any>>(JSON.parse(mock));
 
-  // const handleChange = useCallback(
-  //   (event: React.ChangeEvent<HTMLInputElement>) => {
-  //     setQuery(event.target.value);
-  //   },
-  //   [],
-  // );
+  const handleChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      setQuery(event.target.value);
+    },
+    [],
+  );
 
-  // const handleClickButton = useCallback(async () => {
-  //   try {
-  //     const { lat, lon } = await KakaoService.getLatlngFromAddress(query);
-  //     const weather = await RakutenService.getWeather(lat, lon);
-  //     setWeather(weather);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }, [query]);
+  const handleClickButton = useCallback(async () => {
+    try {
+      const { lat, lon } = await KakaoService.getLatlngFromAddress(query);
+      const weather = await RakutenService.getWeather(lat, lon);
+      setWeather(weather);
+    } catch (error) {
+      console.log(error);
+    }
+  }, [query]);
 
   return (
     <div>
       <div>
-        {/* <input type="text" onChange={handleChange} value={query} />
-        <button onClick={handleClickButton}>날씨조회</button> */}
+        <input type="text" onChange={handleChange} value={query} />
+        <button onClick={handleClickButton}>날씨조회</button>
       </div>
       <WeatherResult weather={weather} />
     </div>
