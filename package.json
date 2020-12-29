@@ -12,6 +12,7 @@
     "node-plop": "0.26.2",
     "node-sass": "4.14.1",
     "plop": "2.7.4",
+    "qs": "6.9.4",
     "react": "17.0.1",
     "react-app-polyfill": "2.0.0",
     "react-dom": "17.0.1",
@@ -122,5 +123,6 @@
         "statements": 90
       }
     }
-  }
+  },
+  "proxy":"https://openapi.naver.com"
 }
