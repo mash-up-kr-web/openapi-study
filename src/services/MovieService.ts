@@ -12,7 +12,7 @@ class MovieService {
     17: 뮤지컬 18: SF 19: 액션20: 무협 21: 에로 22: 서스펜스 23: 서사 24: 블랙코미디
     25: 실험 26: 영화카툰 27: 영화음악 28: 영화패러디포스터
   */
-  getMovies(
+  getNaverMovies(
     query: string,
     display: number = 10,
     start: number = 1,
@@ -34,6 +34,56 @@ class MovieService {
         'X-Naver-Client-Secret': process.env.REACT_APP_CLIENT_SECRET,
       },
     });
+  }
+
+  getKobisActors({
+    peopleName,
+    filmoNames,
+    itemPerPage = 10,
+    curPage = 1,
+  }: {
+    peopleName: string;
+    filmoNames?: string;
+    itemPerPage?: number;
+    curPage?: number;
+  }) {
+    return axios.get(
+      'http://www.kobis.or.kr/kobisopenapi/webservice/rest/people/searchPeopleList.json',
+      {
+        params: {
+          key: process.env.REACT_APP_KOBIS_KEY,
+          curPage,
+          itemPerPage,
+          peopleNm: peopleName,
+          filmoNames,
+        },
+      },
+    );
+  }
+
+  getKobisMovies({
+    movieNm,
+    directorNm,
+    itemPerPage = 10,
+    curPage = 1,
+  }: {
+    movieNm: string;
+    directorNm?: string;
+    itemPerPage?: number;
+    curPage?: number;
+  }) {
+    return axios.get(
+      'http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json',
+      {
+        params: {
+          key: process.env.REACT_APP_KOBIS_KEY,
+          movieNm,
+          directorNm,
+          itemPerPage,
+          curPage,
+        },
+      },
+    );
   }
 }
 
