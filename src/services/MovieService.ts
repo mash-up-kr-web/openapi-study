@@ -4,6 +4,8 @@ import axios from 'axios';
 /* Internal dependencies */
 import Country from 'constants/Country';
 
+
+
 class MovieService {
   /*
     genre - 검색을 원하는 장르 코드를 의미한다. 영화 코드는 다음과 같다.
@@ -12,6 +14,7 @@ class MovieService {
     17: 뮤지컬 18: SF 19: 액션20: 무협 21: 에로 22: 서스펜스 23: 서사 24: 블랙코미디
     25: 실험 26: 영화카툰 27: 영화음악 28: 영화패러디포스터
   */
+
   getNaverMovies(
     query: string,
     display: number = 10,
@@ -62,12 +65,12 @@ class MovieService {
   }
 
   getKobisMovies({
-    movieNm,
-    directorNm,
+    movieNm = '',
+    directorNm = '',
     itemPerPage = 10,
     curPage = 1,
   }: {
-    movieNm: string;
+    movieNm?: string;
     directorNm?: string;
     itemPerPage?: number;
     curPage?: number;
