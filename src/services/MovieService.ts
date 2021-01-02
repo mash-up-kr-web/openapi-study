@@ -19,7 +19,7 @@ class MovieService {
     genre?: number,
     country?: Country,
   ) {
-    return axios.get('/v1/search/movie', {
+    return axios.get('/v1/search/movie.json', {
       method: 'get',
       params: {
         query,
@@ -29,6 +29,9 @@ class MovieService {
         country,
       },
       headers: {
+        'Cache-Control': 'no-cache',
+        Pragma: 'no-cache',
+        Expires: '0',
         'Content-Type': 'plain/text',
         'X-Naver-Client-Id': process.env.REACT_APP_CLIENT_ID,
         'X-Naver-Client-Secret': process.env.REACT_APP_CLIENT_SECRET,
