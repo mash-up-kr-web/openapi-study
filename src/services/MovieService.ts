@@ -85,6 +85,20 @@ class MovieService {
       },
     );
   }
+
+  getDailyBoxOffice() {
+    return axios.get(
+      'http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json',
+      {
+        params: {
+          key: process.env.REACT_APP_KOBIS_KEY,
+          //FIXME: yyyymmdd
+          targetDt: '20210101',
+          itemPerPage: 8,
+        },
+      },
+    );
+  }
 }
 
 export default new MovieService();

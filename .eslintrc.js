@@ -17,4 +17,8 @@ module.exports = {
       rules: { 'prettier/prettier': ['warn', prettierOptions] },
     },
   ],
+  env: {
+    browser: true,
+    node: true,
+  },
 };
