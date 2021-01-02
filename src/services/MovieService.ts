@@ -14,7 +14,7 @@ class MovieService {
   */
   getNaverMovies(
     query: string,
-    display: number = 10,
+    display: number = 1,
     start: number = 1,
     genre?: number,
     country?: Country,
@@ -81,6 +81,25 @@ class MovieService {
           directorNm,
           itemPerPage,
           curPage,
+        },
+      },
+    );
+  }
+  
+  getKobisBoxoffice({
+    targetDt,
+    itemPerPage = '10',
+  }: {
+    targetDt: string;
+    itemPerPage: string;
+  }) {
+    return axios.get(
+      'http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json',
+      {
+        params: {
+          key: process.env.REACT_APP_KOBIS_KEY,
+          targetDt,
+          itemPerPage,
         },
       },
     );

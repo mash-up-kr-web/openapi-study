@@ -1,8 +1,9 @@
 /* External dependencies */
 import React from 'react';
+import MovieWorldcup from 'components/MovieWorldcup';
 
 function App() {
-  return <div>Hello World!</div>;
+  return <MovieWorldcup />
 }
 
 export default App;

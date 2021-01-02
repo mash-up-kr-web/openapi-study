@@ -5,15 +5,28 @@ import 'react-app-polyfill/stable';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import { createGlobalStyle } from 'styled-components';
 
 /* Internal dependencies */
 import App from 'App';
 import * as serviceWorker from 'serviceWorker';
 import 'sanitize.css/sanitize.css';
 
+const GlobalStyle = createGlobalStyle`
+  html, body {
+    height: 100%;
+  }
+  #root {
+    margin: 0 auto;
+    text-align: center;
+    height: 100%;
+  }
+`;
+
 ReactDOM.render(
   <HelmetProvider>
     <React.StrictMode>
+      <GlobalStyle />
       <App />
     </React.StrictMode>
   </HelmetProvider>,
