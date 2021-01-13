@@ -31,7 +31,8 @@
     "stylelint-order": "4.1.0",
     "stylelint-scss": "3.18.0",
     "ts-node": "9.0.0",
-    "typescript": "4.0.5"
+    "typescript": "4.0.5",
+    "xml-js": "1.6.11"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "5.11.5",
@@ -124,5 +125,5 @@
       }
     }
   },
-  "proxy":"https://openapi.naver.com"
+  "proxy": "https://openapi.naver.com"
 }
