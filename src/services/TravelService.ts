@@ -62,6 +62,16 @@ class TravelService {
 
     return data;
   }
+
+  async getCouseInfo(
+    contentId = 2557515
+  ){
+    const result = await axios.get(`http://api.visitkorea.or.kr/openapi/service/rest/KorService/detailInfo?ServiceKey=${process.env.REACT_APP_TRAVEL_KEY}&contentTypeId=25&contentId=${contentId}&MobileOS=ETC&MobileApp=TourAPI3.0_Guide&listYN=Y`)
+    
+    const data = _.get(result, 'data.response.body.items.item', {});
+
+    return data;
+  }
 }
 
 export default new TravelService();
