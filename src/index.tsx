@@ -11,6 +11,8 @@ import App from 'App';
 import * as serviceWorker from 'serviceWorker';
 import 'sanitize.css/sanitize.css';
 
+import './i18n';
+
 ReactDOM.render(
   <HelmetProvider>
     <React.StrictMode>

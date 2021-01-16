@@ -1,5 +1,6 @@
 /* External dependencies */
 import axios from 'axios';
+
 import _ from 'lodash';
 
 class TravelService {
@@ -41,9 +42,20 @@ class TravelService {
     sigunguCode,
     numOfRows = 12,
     pageNo = 1,
-  }: any) {
+    locale = 'ko',
+  }: Partial<{
+    contentTypeId: number;
+    cat1: string;
+    cat2: string;
+    cat3: string;
+    areaCode: number;
+    sigunguCode: number;
+    numOfRows: number;
+    pageNo: number;
+    locale: string;
+  }>) {
     const result = await axios.get(
-      `http://api.visitkorea.or.kr/openapi/service/rest/KorService/areaBasedList?ServiceKey=${process.env.REACT_APP_TRAVEL_KEY}&listYN=Y&MobileOS=ETC&MobileApp=TourAPI3.0_Guide&arrange=A`,
+      `http://api.visitkorea.or.kr/openapi/service/rest/${locale}/areaBasedList?ServiceKey=${process.env.REACT_APP_TRAVEL_KEY}&listYN=Y&MobileOS=ETC&MobileApp=TourAPI3.0_Guide&arrange=A`,
       {
         params: {
           contentTypeId,
