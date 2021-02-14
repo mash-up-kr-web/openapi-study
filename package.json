@@ -124,5 +124,5 @@
       }
     }
   },
-  "proxy":"https://openapi.naver.com"
+  "proxy": "https://openapi.naver.com"
 }
