@@ -6,6 +6,7 @@
     "axios": "0.21.0",
     "classnames": "2.2.6",
     "cross-env": "7.0.2",
+    "express": "4.17.1",
     "fontfaceobserver": "2.1.0",
     "husky": "4.3.0",
     "lodash": "4.17.20",
@@ -63,6 +64,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:server": "node server.ts",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -124,5 +126,5 @@
       }
     }
   },
-  "proxy": "https://openapi.naver.com"
+  "proxy": "http://localhost:4000"
 }
