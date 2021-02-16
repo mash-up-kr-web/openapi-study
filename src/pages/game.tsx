@@ -13,8 +13,10 @@ const MAX_ITEM_COUNT = 16;
 
 const GamePage = () => {
   const [round, setRound] = useState(1);
+  const [count, setCount] = useState(1);
   const [currIndex, setCurrIndex] = useState(MAX_ITEM_COUNT - 2);
   const [oceanInfos, setOceanInfos] = useState<OceanInfo[]>([]);
+  const [originInfos, setOriginInfos] = useState<OceanInfo[]>([]);
   const history = useHistory();
 
   useEffect(() => {
@@ -27,6 +29,7 @@ const GamePage = () => {
         .slice(0, MAX_ITEM_COUNT);
 
       setOceanInfos(infos);
+      setOriginInfos(infos);
     })();
   }, []);
 
@@ -37,14 +40,6 @@ const GamePage = () => {
   const rightOcean = useMemo(() => oceanInfos[currIndex + 1], [
     currIndex,
     oceanInfos,
-  ]);
-
-  // 1라운드 n차 구현인데 증가하는게 이상해서 로직을 다시 생각해야함
-  // 원하는 방향(1차 -> 2차 -> 3차...)
-  // 실제 방향(1차 -> 1.5차 -> 2차...)
-  const position = useMemo(() => (oceanInfos.length - currIndex) / 2, [
-    oceanInfos,
-    currIndex,
   ]);
 
   const handleSelect = useCallback(
@@ -62,14 +57,16 @@ const GamePage = () => {
         // 현재 차수가 남아있는 경우
         setCurrIndex(currIndex - 2);
         setOceanInfos(newOceanInfos);
+        setCount(count + 1);
       } else {
         // 차수에 더 이상 진행할 선택이 없는 경우 라운드를 추가하고 다시 돈다(16강 -> 8강)
         setRound(round + 1);
         setCurrIndex(newOceanInfos.length - 2);
         setOceanInfos(newOceanInfos.sort(() => Math.random() - Math.random()));
+        setCount(1);
       }
     },
-    [oceanInfos, currIndex, round],
+    [oceanInfos, currIndex, round, count, history],
   );
 
   if (!oceanInfos.length) {
@@ -80,7 +77,7 @@ const GamePage = () => {
     <Layout style={{ height: '100vh' }}>
       <Header>
         <Logo>
-          바다 이상형 월드컵 {round}라운드 {position}차
+          바다 이상형 월드컵 {round}라운드 {count}차
         </Logo>
       </Header>
       <Content style={{ display: 'flex' }}>
