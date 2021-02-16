@@ -1,11 +1,11 @@
 import { Layout } from 'antd';
-import { Content, Footer, Header } from 'antd/lib/layout/layout';
-import OceanSelection from 'components/OceanSelection';
+import { Content, Header } from 'antd/lib/layout/layout';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import TravelService from 'services/TravelService';
 import styled from 'styled-components';
 
+import OceanSelection from 'components/OceanSelection';
+import TravelService from 'services/TravelService';
 import OceanInfo from 'types/OceanInfo';
 
 // 16이면 16강, 32면 32강 가능
