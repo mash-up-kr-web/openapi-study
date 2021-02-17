@@ -30,7 +30,7 @@ const ResultPage = ({ location: { state } }) => {
         <Logo>나랑 바다 갈래?</Logo>
       </Header>
       <Content style={{ display: 'flex' }}>
-        <OceanSelection ocean={ocean} />
+        <OceanSelection isResult ocean={ocean} />
         <Description>
           <MessageBox>{messages[flag]}</MessageBox>
           {flag === 'initial' && (

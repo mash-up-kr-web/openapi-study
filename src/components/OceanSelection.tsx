@@ -5,11 +5,12 @@ import OceanInfo from 'types/OceanInfo';
 
 interface OceanSelectionProps extends React.HTMLProps<HTMLDivElement> {
   ocean: OceanInfo;
+  isResult?: boolean;
 }
 
 // TODO: 선택시 인터렉션 필요
-const OceanSelection = ({ ocean, onClick }: OceanSelectionProps) => (
-  <Selection onClick={onClick}>
+const OceanSelection = ({ ocean, isResult, onClick }: OceanSelectionProps) => (
+  <Selection isResult={isResult} onClick={onClick}>
     <img src={ocean.imageSrc} alt="ocean" />
     <Title>{ocean.name}</Title>
     <Description>{ocean.description}</Description>
@@ -18,13 +19,13 @@ const OceanSelection = ({ ocean, onClick }: OceanSelectionProps) => (
 
 export default OceanSelection;
 
-const Selection = styled.div`
+const Selection = styled.div<{ isResult?: boolean }>`
   position: relative;
   width: 50%;
   height: 100%;
   background-color: blue;
   border: 1px solid black;
-  cursor: pointer;
+  cursor: ${props => (props.isResult ? '' : 'pointer')};
 
   > img {
     width: 100%;
