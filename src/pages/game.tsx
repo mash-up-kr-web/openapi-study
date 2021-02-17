@@ -77,7 +77,8 @@ const GamePage = () => {
     <Layout style={{ height: '100vh' }}>
       <Header>
         <Logo>
-          바다 이상형 월드컵 {round}라운드 {count}차
+          나랑 바다 갈래? {round}라운드(
+          {originInfos.length / Math.pow(2, round - 1)}강) {count}차
         </Logo>
       </Header>
       <Content style={{ display: 'flex' }}>
