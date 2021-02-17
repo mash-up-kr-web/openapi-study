@@ -13,11 +13,12 @@ const ResultPage = ({ location: { state } }) => {
   const encoded = serialize(state);
   const url = new URL(encoded, 'http://localhost:3000/');
   const shortenUrl = url.href.substring(0, 37) + ' ...';
-  const flag: FlagType = state.flag || 'initial';
+  const flag: FlagType = state.flag || 'correct';
+  const name = '민수르';
   const messages = {
     initial: `"${ocean.name}"에 같이 가고 싶은 사람에게 링크를 공유하세요!`,
-    correct: `바다 좀 볼 줄 아는군? 같이 "${ocean.name}" 보러 가자구~`,
-    incorrect: `"${ocean.name}" 보러 가고 싶었다능..`,
+    correct: `바다 좀 볼 줄 아는군? ${name}와 함께 "${ocean.name}" 보러 가자구~`,
+    incorrect: `${name}는 "${ocean.name}" 보러 가고 싶었다능..`,
   };
 
   const onClick = useCallback(() => {
