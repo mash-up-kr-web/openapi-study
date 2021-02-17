@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Layout } from 'antd';
 import { Content, Header } from 'antd/lib/layout/layout';
 import styled from 'styled-components';
@@ -17,6 +17,10 @@ const ResultPage = ({ location: { state } }) => {
     incorrect: '',
   };
 
+  const onClick = useCallback(() => {
+    navigator.clipboard.writeText(url.href);
+  }, [url.href]);
+
   return (
     <Layout style={{ height: '100vh' }}>
       <Header>
@@ -28,7 +32,7 @@ const ResultPage = ({ location: { state } }) => {
           <MessageBox>{messages.initial}</MessageBox>
           <UrlBox>
             <UrlInput disabled value={shortenUrl} />
-            <CopyButton>Copy</CopyButton>
+            <CopyButton onClick={onClick}>Copy</CopyButton>
           </UrlBox>
         </Description>
       </Content>
