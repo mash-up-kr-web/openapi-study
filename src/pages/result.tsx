@@ -6,15 +6,18 @@ import OceanSelection from 'components/OceanSelection';
 import OceanInfo from 'types/OceanInfo';
 import { serialize } from 'util/crypto';
 
+type FlagType = 'initial' | 'correct' | 'incorrect';
+
 const ResultPage = ({ location: { state } }) => {
   const [ocean] = useState<OceanInfo>(state.ocean);
   const encoded = serialize(state);
   const url = new URL(encoded, 'http://localhost:3000/');
   const shortenUrl = url.href.substring(0, 37) + ' ...';
+  const flag: FlagType = state.flag || 'initial';
   const messages = {
-    initial: '',
-    correct: '',
-    incorrect: '',
+    initial: `"${ocean.name}"에 같이 가고 싶은 사람에게 링크를 공유하세요!`,
+    correct: `바다 좀 볼 줄 아는군? 같이 "${ocean.name}" 보러 가자구~`,
+    incorrect: `"${ocean.name}" 보러 가고 싶었다능..`,
   };
 
   const onClick = useCallback(() => {
@@ -29,11 +32,13 @@ const ResultPage = ({ location: { state } }) => {
       <Content style={{ display: 'flex' }}>
         <OceanSelection ocean={ocean} />
         <Description>
-          <MessageBox>{messages.initial}</MessageBox>
-          <UrlBox>
-            <UrlInput disabled value={shortenUrl} />
-            <CopyButton onClick={onClick}>Copy</CopyButton>
-          </UrlBox>
+          <MessageBox>{messages[flag]}</MessageBox>
+          {flag === 'initial' && (
+            <UrlBox>
+              <UrlInput disabled value={shortenUrl} />
+              <CopyButton onClick={onClick}>Copy</CopyButton>
+            </UrlBox>
+          )}
         </Description>
       </Content>
     </Layout>
