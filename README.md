@@ -6,5 +6,5 @@
 4. 1시간동안 서로 어떤 프로젝트를 작성했는지 소개 및 리뷰
 
 ## 참고사이트
-[https://github.com/dl0312/open-apis-korea](https://github.com/dl0312/open-apis-korea) - 다양한 카테고리가 장점! 한국인이 작성한 문서라 문서가 한국어라 사용하기 편리함
-[https://english.api.rakuten.net](https://english.api.rakuten.net) - API계의 큰손 라쿠텐 api. 유용한 API들을 판매하는 마켓플레이스로 유용한 api들이 많고 유료인만큼 사용법이나 예시코드가 잘되있음. 일정 사용량부터 과금되서 토이프로젝트용으로는 무료로 사용할 수 있는 api 많음
+
+[https://avatars.dicebear.com](https://avatars.dicebear.com) - 유저 아바타를 유저 이름을 기반으로 랜덤하게 생성해주는 open api.

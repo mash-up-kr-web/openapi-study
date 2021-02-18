@@ -1,0 +1,15 @@
+[debug] [2021-02-16T16:13:46.930Z] ----------------------------------------------------------------------
+[debug] [2021-02-16T16:13:46.932Z] Command:       /usr/local/Cellar/node/14.12.0/bin/node /usr/local/bin/firebase login
+[debug] [2021-02-16T16:13:46.932Z] CLI Version:   9.3.0
+[debug] [2021-02-16T16:13:46.932Z] Platform:      darwin
+[debug] [2021-02-16T16:13:46.932Z] Node Version:  v14.12.0
+[debug] [2021-02-16T16:13:46.933Z] Time:          Wed Feb 17 2021 01:13:46 GMT+0900 (Korean Standard Time)
+[debug] [2021-02-16T16:13:46.934Z] ----------------------------------------------------------------------
+[debug] [2021-02-16T16:13:46.934Z] 
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=971894817&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
