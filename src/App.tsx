@@ -1,4 +1,5 @@
 /* External dependencies */
+import { IndexContextProvider } from 'components/index/IndexContext';
 import IndexPage from 'pages';
 import GamePage from 'pages/game';
 import ResultPage from 'pages/result';
@@ -8,13 +9,16 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 function App() {
   return (
     <>
+    <IndexContextProvider>
       <Router>
         <Switch>
           <Route exact path="/game" component={GamePage} />
           <Route exact path="/result" component={ResultPage} />
-          <Route path="/" component={IndexPage} />
+            <Route path="/" component={IndexPage} />
         </Switch>
       </Router>
+      </IndexContextProvider>
+
     </>
   );
 }
